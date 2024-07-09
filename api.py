@@ -34,6 +34,7 @@ def make_prediction(data: PatientResults):
     prediction = encoder.inverse_transform([prediction])[0]
 
     probability = logistic_regression_pipeline.predict_proba(df)
+    probability = probability[0]
 
     # Prepare the result dictionary
     result = {
@@ -41,7 +42,8 @@ def make_prediction(data: PatientResults):
         'Probability': {
             'Positive': round(probability[1] * 100, 2),
             'Negative': round(probability[0] * 100, 2)
-        }
+        },
+        'Message': 'Your Patient will develop Sepsis' if prediction == 'Positive' else 'Your Patient will not develop Sepsis'
     }
 
     return result
@@ -55,6 +57,7 @@ def make_prediction(data: PatientResults):
     prediction = encoder.inverse_transform([prediction])[0]
 
     probability = random_forest_pipeline.predict_proba(df)
+    probability = probability[0]
 
   # Prepare the result dictionary
     result = {
@@ -62,7 +65,8 @@ def make_prediction(data: PatientResults):
         'Probability': {
             'Positive': round(probability[1] * 100, 2),
             'Negative': round(probability[0] * 100, 2)
-        }
+        },
+        'Message': 'Your Patient will develop Sepsis' if prediction == 'Positive' else 'Your Patient will not develop Sepsis'
     }
 
     return result
