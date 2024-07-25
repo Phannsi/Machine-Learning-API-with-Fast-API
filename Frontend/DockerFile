@@ -1,1 +1,20 @@
 FROM python:3.9.8
+
+# Copy requirements.txt into the tmp folder
+COPY requirements.txt /tmp/requirements.txt
+
+# Install pip and recursively install dependencies in requirememts.txt
+RUN python -m pip install --timeout 300000 -r /tmp/requirements.txt
+
+# Copy all items into app directory
+COPY . /app
+
+# Set app as the working directory
+WORKDIR /app
+
+# Expose a port to connect to the container
+EXPOSE 3030
+
+# Run command for the api server
+CMD ["streamlit", "run", "Home_page.py", "--server.port=3030"]
+

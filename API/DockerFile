@@ -1,1 +1,19 @@
-FROM Python:3.9.8
+FROM python:3.9.8
+
+# Copy requirements.txt into the tmp folder
+COPY requirements.txt /tmp/requirements.txt
+
+# Install pip and recursively install dependencies in requirememts.txt
+RUN python -m pip install --timeout 300000 -r /tmp/requirements.txt
+
+# Copy all items into app directory
+COPY . /app
+
+# Set app as the working directory
+WORKDIR /app
+
+# Expose a port to connect to the container
+EXPOSE 80
+
+# Run command for the api server
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "80"]

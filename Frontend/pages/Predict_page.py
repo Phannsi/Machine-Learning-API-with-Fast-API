@@ -11,7 +11,7 @@ import requests
 import pandas as pd
 
 # Define the backend URL
-backend_url = 'http://127.0.0.1:8000'
+backend_url = 'http://api:80'
 
 # Set page configuration
 st.set_page_config(
