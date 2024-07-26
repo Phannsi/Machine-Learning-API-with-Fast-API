@@ -1,5 +1,4 @@
 # Machine Learning API using FastAPI
-Develop a Machine Learning API (Application Programming Interface) using FastAPI.
 
 [![python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 [![MIT licensed](https://img.shields.io/badge/license-mit-blue?style=for-the-badge&logo=appveyor)](./LICENSE)
@@ -7,7 +6,7 @@ Develop a Machine Learning API (Application Programming Interface) using FastAPI
 
 ## Introduction
 
-Welcome to data science project about sepsis prediction/classification and the API and streamlit application.
+Welcome to my data science project about a ML sepsis prediction/classification built for an API and streamlit application.
 
 ## Content
 
@@ -86,7 +85,7 @@ Then run
 
 ## Medium Article
 
-[Medium Article]()
+[Medium Article](https://medium.com/@fancythird/how-i-built-my-first-api-with-fastapi-89902897806b)
 
 ## Author
 
